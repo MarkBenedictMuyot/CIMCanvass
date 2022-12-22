@@ -270,9 +270,11 @@ small {
     width: 180px;
     margin-bottom: 5px;
 }
-.footer-col-3{
-padding-left: 140px;
+
+.footer-col-3 {
+    padding-left: 140px;
 }
+
 .footer-col-3, .footer-col-4 {
     flex-basis: 12%;
     text-align: center;
@@ -288,10 +290,133 @@ ul {
     justify-content: space-between;
     margin: 100px auto 50px;
 }
-select{
-    border:1px solid #ff523b;
+
+select {
+    border: 1px solid #ff523b;
     padding: 5px;
 }
-select:focus{
-    outline:none;
+
+select:focus {
+    outline: none;
+}
+
+/*---------------------------------------------------product-detail html------------------------------------------*/
+.single-prod-img {
+    width: 100%;
+}
+
+.single-product {
+    margin-top: 80px;
+}
+
+.single-product .col-2 img {
+    padding: 0;
+}
+
+.single-product .col-2 {
+    padding: 20px;
+}
+
+.single-product h4 {
+    margin: 20px 0;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.single-product select {
+    display: block;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.single-product input {
+    width: 50px;
+    height: 40px;
+    padding-left: 10px;
+    font-size: 20px;
+    margin-right: 10px;
+    border: 1px solid #ff523b;
+}
+
+input:focus {
+    outline: none;
+}
+
+.small-img-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+.small-img {
+    width: 100%;
+
+}
+
+/*---------------------------------------cart html-------------------------------------------------------------------*/
+
+.cart-page {
+    margin: 80px auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.cart-info {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+th {
+    text-align: left;
+    padding: 5px;
+    color: white;
+    background: #ff523b;
+    font-weight: normal;
+}
+
+td {
+    padding: 10px 5px;
+}
+
+td input {
+    width: 40px;
+    height: 30px;
+    padding: 5px;
+}
+
+td a {
+    color: #ff523b;
+    font-size: 12px;
+}
+
+td img {
+    width: 80px;
+    height: 80px;
+    margin-right: 10px;
+}
+
+.total-price {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.total-price table {
+    border-top: 3px solid #ff523b;
+    width: 100%;
+    max-width: 410px;
+}
+
+td:last-child {
+    text-align: right;
+}
+
+th:last-child {
+    text-align: right;
 }
