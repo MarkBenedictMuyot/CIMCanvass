@@ -420,3 +420,18 @@ td:last-child {
 th:last-child {
     text-align: right;
 }
+
+/*------------------------------------------------account html--------------------------------------*/
+.account-page {
+    padding: 50px 0;
+    background: repeating-linear-gradient(#604439, #9e9a75, #1c222e, #41533b, #554840);
+}
+.form-container{
+    background: white;
+    width:300px;
+    height: 400px;
+    position: relative;
+    text-align: center;
+    padding:20px 0;
+    margin:auto;
+}
