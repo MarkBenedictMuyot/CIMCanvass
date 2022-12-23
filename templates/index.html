@@ -29,18 +29,18 @@
     <div class="container">
         <div class="navbar">
             <div class="logo">
-                <img src="/static/images/CIMlogo/CIMLogo.png" alt="CIM_LOGO" class="main-logo">
+                <a href="index.html"><img src="/static/images/CIMlogo/CIMLogo.png" alt="CIM_LOGO" class="main-logo"></a>
             </div>
             <nav>
                 <ul id="MenuItems">
                     <li><a href="/">Home</a></li>
                     <li><a href="{{ product }}">Products</a></li>
-                    <li><a href="">About</a></li>
-                    <li><a href="">Contact</a></li>
-                    <li><a href="">Account</a></li>
+                    <li><a href="{{ about }}">About</a></li>
+                    <li><a href="{{ contact }}">Contact</a></li>
+                    <li><a href="{{ account }}">Account</a></li>
                 </ul>
             </nav>
-            <img src="/static/images/CIMlogo/cart.png" alt="cart" class="cart-icon">
+            <a href="{{ cart }}"> <img src="/static/images/CIMlogo/cart.png" alt="cart" class="cart-icon"></a>
             <img src="/static/images/CIMlogo/hamburgermenu.png" alt="hamburgermenu" class="menu-icon"
                  onclick="menutoggle()">
         </div>
@@ -79,8 +79,8 @@
     <h2 class="title">Featured Products</h2>
     <div class="row">
         <div class="col-4">
-            <img src="/static/images/featuredprod/tastethemoney.jpg" alt="tastethemoney_canvass">
-            <h4>Taste The Money</h4>
+          <a href="product-detail.html"><img src="/static/images/featuredprod/tastethemoney.jpg" alt="tastethemoney_canvass"> </a>
+            <a href="product-detail.html"><h4>Taste The Money</h4></a>
             <div class="rating">
                 <i class="fa fa-star"></i>
                 <i class="fa fa-star"></i>
