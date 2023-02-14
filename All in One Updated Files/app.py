@@ -1,8 +1,10 @@
+import csv
+
 import bcrypt
 from flask import Flask, session, redirect, render_template, flash, url_for
 from flask_login import LoginManager, UserMixin, login_user, logout_user, login_required
 
-from forms import LoginForm, RegisterForm
+from forms import LoginForm, RegisterForm, ContactForm
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -50,10 +52,51 @@ def find_user(username):
     return user
 
 
+@app.route('/')
+def index():  # put application's code here
+    return render_template('index.html', username=session.get('username'))
+
+
+@app.route('/product')
+def product():  # put application's code here
+    return render_template('product.html')
+
+
+@app.route('/product-detail')
+def product_detail():  # put application's code here
+    return render_template('product-detail.html')
+
+
+@app.route('/about')
+def about():  # put application's code here
+    return render_template('about.html')
+
+
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():
+    form = ContactForm()
+    if form.validate_on_submit():
+        with open('data/messages.csv', 'a') as f:
+            writer = csv.writer(f)
+            writer.writerow([form.name.data, form.email.data, form.message.data])
+        return redirect(url_for('contact_response', name=form.name.data))
+    return render_template('contact.html', form=form)
+
+
+@app.route('/contact_response/<name>')
+def contact_response(name):
+    return render_template('contact_response.html', name=name)
+
+
+@app.route('/cart')
+@login_required
+def cart():  # put application's code here
+    return render_template('cart.html')
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
-    # form2 = RegisterForm()
     if form.validate_on_submit():
         user = find_user(form.username.data)
         # user could be None
@@ -95,56 +138,6 @@ def register():
         else:
             flash('This username already exists, choose another one')
     return render_template('register.html', form=form)
-
-
-@app.route('/')
-def index():  # put application's code here
-    return render_template('index.html', username=session.get('username'))
-
-
-@app.route('/product')
-def product():  # put application's code here
-    return render_template('product.html')
-
-
-@app.route('/about')
-def about():  # put application's code here
-    return render_template('about.html')
-
-
-@app.route('/contact', methods=['GET', 'POST'])
-def contact():  # put application's code here
-    return render_template('contact.html')
-
-
-# @app.route('/account')
-# def account():  # put application's code here
-#     return render_template('account.html',
-#                            product=url_for('product'),
-#                            account=url_for('account'),
-#                            about=url_for('about'),
-#                            contact=url_for('contact'),
-#                            cart=url_for('cart')
-#                            )
-
-
-@app.route('/cart')
-@login_required
-def cart():  # put application's code here
-    return render_template('cart.html')
-
-
-@app.route('/product-detail')
-def product_detail():  # put application's code here
-    return render_template('product-detail.html')
-
-
-# product=url_for('product'),
-# account=url_for('account'),
-# about=url_for('about'),
-# contact=url_for('contact'),
-# cart=url_for('cart')
-# )
 
 
 if __name__ == '__main__':
