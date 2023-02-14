@@ -23,29 +23,17 @@
                 </div>
                 <div class="form-container">
                     <div class="form-btn">
-                        <span onclick="login()">Login</span>
                         <span onclick="register()">Register</span>
                         <hr id=" Indicator">
                     </div>
-                    <form id="LoginForm" action="/login" method="post">
-                        {% for message in get_flashed_messages() %}
-                            {{ message }}<br/>
-                        {% endfor %}
-
-                        {{ form.csrf_token }}
-                        {{ form.username.label }} {{ form.username }}<br/>
-                        {{ form.password.label }} {{ form.password }}<br/>
-                        {{ form.submit }}
-                        <a href="">Forgot Password</a>
-                    </form>
                     <form id="RegForm" action="/register" method="post">
-                        {{ form2.csrf_token }}
-                        {{ render_field(form2.username) }}
-                        {{ render_field(form2.email) }}
-                        {{ render_field(form2.phone) }}
-                        {{ render_field(form2.password) }}
-                        {{ render_field(form2.password2) }}
-                        <button type="submit" class="btn" {{ form2.submit }}>Register</button>
+                        {{ form.csrf_token }}
+                        {{ render_field(form.username) }}
+                        {{ render_field(form.email) }}
+                        {{ render_field(form.phone) }}
+                        {{ render_field(form.password) }}
+                        {{ render_field(form.password2) }}
+                        <button type="submit" class="btn">Register</button>
                     </form>
                 </div>
             </div>

@@ -430,10 +430,10 @@ th:last-child {
 .form-container {
     background: white;
     width: 320px;
-    height: 450px;
+    height: 550px;
     position: relative;
     text-align: center;
-    padding: 20px 0;
+    padding: 40px 0;
     margin: auto;
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
     overflow: hidden;
@@ -453,10 +453,13 @@ th:last-child {
 }
 
 .form-container form {
-    max-width: 300px;
+    text-align: center;
+    max-width: 400px;
+    /*max-height: fit-content;*/
     padding: 0 20px;
-    position: absolute;
-    top: 130px;
+    position: relative;
+    top: 20px;
+    margin: auto;
     transition: transform 1s;
 }
 
@@ -478,9 +481,9 @@ form .btn:focus {
     outline: none;
 }
 
-#LoginForm {
-    left: -300px;
-}
+/*#LoginForm {*/
+/*    left: -300px;*/
+/*}*/
 
 #RegForm {
     left: 0px;
